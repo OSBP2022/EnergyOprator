@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xml:th="http://www.thymeleaf.org">
+
+<div th:fragment="nodeusage">
+    <h1>Blocks</h1>
+    <table>
+        <thead>
+        <tr>
+            <th> usage </th>
+        </tr>
+        </thead>
+        <tbody>
+        </tr>
+        <tr th:each="metrics : ${metricsList.getItems()}">
+            <td><span th:text="${metrics.item.getUsage()}"> nausageme </span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xml:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Nodes</h1>
+<table>
+    <thead>
+    <tr>
+        <th> name </th>
+        <th> Architecture </th>
+        <th> status </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${nodeList.isEmpty()}">
+        <td colspan="2"> No pods Available </td>
+    </tr>
+    <tr th:each="node : ${nodeList}">
+        <td><span th:text="${node.getMetadata().getName()}"> name </span></td>
+        <td><span th:text="${node.getStatus().getNodeInfo().getArchitecture()}"> Architecture </span></td>
+        <td><span th:text="${node.getStatus().getNodeInfo().getArchitecture()}"> Architecture </span></td>
+    </tr>
+    </tbody>
+</table>
+<div th:insert="fragments:: nodeusage"></div>
+</body>
+</html>
